@@ -1,0 +1,30 @@
+{
+  "name": "btc-price-monitor",
+  "version": "0.0.1",
+  "description": "crypto currency exchanges btc price compare.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lleellee0/btc-price-monitor.git"
+  },
+  "keywords": [
+    "bitcoin",
+    "crypto",
+    "currency",
+    "monitor"
+  ],
+  "author": "Foorogrammer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lleellee0/btc-price-monitor/issues"
+  },
+  "homepage": "https://github.com/lleellee0/btc-price-monitor#readme",
+  "dependencies": {
+    "express": "^4.16.1",
+    "node-bittrex-api": "^0.7.6",
+    "poloniex-api-node": "^1.6.0"
+  }
+}

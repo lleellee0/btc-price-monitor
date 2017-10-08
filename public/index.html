@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <title>
+            BTC-PRICE-MONITOR
+        </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <table>
+            <thead>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Poloniex
+                </th>
+                <th>
+                    Bittrex
+                </th>
+                <th>
+                    Percent
+                </th>
+            </thead>
+            <tbody id = "targetTable">
+                <!-- <tr>
+                    <td>
+                        1
+                    </td>
+                    <td>
+                        2
+                    </td>
+                    <td>
+                        3
+                    </td>
+                    <td>
+                        4
+                    </td>
+                </tr>
+                <tr>
+                        <td>
+                            5
+                        </td>
+                        <td>
+                            6
+                        </td>
+                        <td>
+                            7
+                        </td>
+                        <td>
+                            8
+                        </td>
+                    </tr>
+                    <tr>
+                            <td>
+                                9
+                            </td>
+                            <td>
+                                10
+                            </td>
+                            <td>
+                                11
+                            </td>
+                            <td>
+                                12
+                            </td>
+                        </tr> -->
+            </tbody>
+        </table>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script>
+            
+            function loadData() {
+                var count = 0;
+
+                var table = document.querySelector('#targetTable');
+
+                var xhttp = new XMLHttpRequest();
+                xhttp.open('GET', '/total', true);
+                xhttp.send('');
+
+                xhttp.onload = function() {
+                    if(xhttp.status == 200) {
+                        var totalArray = JSON.parse(xhttp.response);
+                        
+                        console.log(totalArray);
+                        for(var i = 0; i < totalArray.length; i++) {
+                            if(totalArray[i].poloniexPrice === undefined)
+                                totalArray[i].poloniexPrice = 0;
+                            if(totalArray[i].bittrexPrice === undefined)
+                                totalArray[i].bittrexPrice = 0;
+                            if(totalArray[i].percent === undefined)
+                            totalArray[i].percent = '0';
+
+                            $("#targetTable").
+                            append(`<tr><td>${totalArray[i].name}</td><td>${totalArray[i].poloniexPrice}</td><td>${totalArray[i].bittrexPrice}</td><td>${totalArray[i].percent}%</td></tr>`)
+                        }
+                        
+                        
+                    }
+                }
+            }
+
+            loadData();
+        
+        </script>
+    </body>
+</html>
