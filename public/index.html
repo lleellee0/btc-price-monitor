@@ -22,48 +22,6 @@
                 </th>
             </thead>
             <tbody id = "targetTable">
-                <!-- <tr>
-                    <td>
-                        1
-                    </td>
-                    <td>
-                        2
-                    </td>
-                    <td>
-                        3
-                    </td>
-                    <td>
-                        4
-                    </td>
-                </tr>
-                <tr>
-                        <td>
-                            5
-                        </td>
-                        <td>
-                            6
-                        </td>
-                        <td>
-                            7
-                        </td>
-                        <td>
-                            8
-                        </td>
-                    </tr>
-                    <tr>
-                            <td>
-                                9
-                            </td>
-                            <td>
-                                10
-                            </td>
-                            <td>
-                                11
-                            </td>
-                            <td>
-                                12
-                            </td>
-                        </tr> -->
             </tbody>
         </table>
         <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -92,7 +50,12 @@
                             totalArray[i].percent = '0';
 
                             $("#targetTable").
-                            append(`<tr><td>${totalArray[i].name}</td><td>${totalArray[i].poloniexPrice}</td><td>${totalArray[i].bittrexPrice}</td><td>${totalArray[i].percent}%</td></tr>`)
+                            append(`<tr>
+                                <td>${totalArray[i].name}</td>
+                                <td><a target="_blank" href="https://poloniex.com/exchange#${totalArray[i].name.replace('-', '_')}">${totalArray[i].poloniexPrice}</a></td>
+                                <td><a target="_blank" href="https://bittrex.com/Market/Index?MarketName=${totalArray[i].name}">${totalArray[i].bittrexPrice}</a></td>
+                                <td>${totalArray[i].percent}%</td>
+                                </tr>`);
                         }
                         
                         
