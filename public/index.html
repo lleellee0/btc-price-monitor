@@ -27,7 +27,11 @@
         <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
         <script>
             
+
             function loadData() {
+                // 테이블 비우기
+                $('#targetTable').html('');
+
                 var count = 0;
 
                 var table = document.querySelector('#targetTable');
@@ -64,6 +68,7 @@
             }
 
             loadData();
+            setInterval(loadData, 3000);
         
         </script>
     </body>

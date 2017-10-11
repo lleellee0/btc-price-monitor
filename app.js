@@ -90,4 +90,4 @@ const refreshTotalTable = () => {
 }
 
 setTimeout(makeTotalTable, 5000);
-setInterval(refreshTotalTable, 10000);
+setInterval(refreshTotalTable, 3000);
